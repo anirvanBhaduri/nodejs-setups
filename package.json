@@ -1,0 +1,24 @@
+{
+  "name": "nodejsFun",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "observable": "tsc --project ./tsconfig.json && node ./dist/observable.js",
+    "promisify": "tsc --project ./tsconfig.json && node ./dist/promisify.js",
+    "server": "tsc --project ./tsconfig.json && cp ./src/index.html ./dist/index.html && node ./dist/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-ws": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/express-ws": "^3.0.4",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}
