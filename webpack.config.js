@@ -6,7 +6,7 @@ const NodemonPlugin = require('nodemon-webpack-plugin');
 
 module.exports = {
   entry: {
-    server: './src/server.ts',
+    server: './backend/server.ts',
   },
 
   mode: 'development',
@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, 'backend'),
         exclude: /node_modules/,
       },
 
@@ -62,7 +62,7 @@ module.exports = {
 
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: './src/index.html', to: './public/index.html' }],
+      patterns: [{ from: './backend/index.html', to: './public/index.html' }],
     }),
     ignoreWatchPlugin(path.resolve(__dirname, 'dist')),
     new NodemonPlugin({
