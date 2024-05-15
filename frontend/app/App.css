@@ -1,20 +1,46 @@
 .test-content {
   height: 20%;
-  flex-direction: column;
+  display: flex;
   justify-content: center;
-  vertical-align: center;
   align-items: center;
   font-size: 2em;
+  position: relative;
 }
 
 .test-content::before {
-  content: open-quote;
-  height: 10px;
+  content: '';
+  height: 3px;
+  width: 0%;
+  background-color: red;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  transition: width ease-in 250ms;
+}
+
+.test-content:hover::before {
+  content: '';
+  height: 3px;
   width: 100%;
+  left: 0;
+  background-color: red;
 }
 
 .test-content::after {
-  content: close-quote;
-  height: 10px;
+  content: '';
+  height: 3px;
+  width: 0%;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transition: width ease-in 250ms;
+}
+
+.test-content:hover::after {
+  content: '';
+  height: 3px;
   width: 100%;
+  background-color: red;
+  right: 0;
 }
