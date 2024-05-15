@@ -12,9 +12,6 @@ module.exports = {
   mode: 'development',
   target: 'node',
 
-  // Enable sourcemaps for debugging webpack's output.
-  devtool: 'source-map',
-
   module: {
     rules: [
       {
@@ -22,13 +19,6 @@ module.exports = {
         use: 'ts-loader',
         include: path.resolve(__dirname, 'backend'),
         exclude: /node_modules/,
-      },
-
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader',
       },
     ],
   },
@@ -46,20 +36,6 @@ module.exports = {
     clean: true,
   },
 
-  optimization: {
-    runtimeChunk: 'single',
-    moduleIds: 'deterministic',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
-  },
-
   plugins: [
     new CopyPlugin({
       patterns: [{ from: './backend/index.html', to: './public/index.html' }],
@@ -68,9 +44,6 @@ module.exports = {
     new NodemonPlugin({
       // what to watch
       watch: path.resolve('./dist'),
-
-      // Node arguments.
-      // nodeArgs: ['--inspect=9222'],
 
       // Files to ignore.
       ignore: ['*.js.map'],
