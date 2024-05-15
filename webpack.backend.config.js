@@ -1,5 +1,4 @@
 const path = require('path');
-const ignoreWatchPlugin = require('watch-ignore-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const CopyPlugin = require('copy-webpack-plugin');
 const NodemonPlugin = require('nodemon-webpack-plugin');
@@ -40,7 +39,6 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: './backend/index.html', to: './public/index.html' }],
     }),
-    ignoreWatchPlugin(path.resolve(__dirname, 'dist')),
     new NodemonPlugin({
       // what to watch
       watch: path.resolve('./dist'),
