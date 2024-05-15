@@ -1,6 +1,5 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const CopyPlugin = require('copy-webpack-plugin');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 
 module.exports = {
@@ -32,13 +31,9 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
   },
 
   plugins: [
-    new CopyPlugin({
-      patterns: [{ from: './backend/index.html', to: './public/index.html' }],
-    }),
     new NodemonPlugin({
       // what to watch
       watch: path.resolve('./dist'),
