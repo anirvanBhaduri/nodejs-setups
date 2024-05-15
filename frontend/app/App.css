@@ -1,0 +1,20 @@
+.test-content {
+  height: 20%;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+.test-content::before {
+  content: open-quote;
+  height: 10px;
+  width: 100%;
+}
+
+.test-content::after {
+  content: close-quote;
+  height: 10px;
+  width: 100%;
+}
