@@ -46,16 +46,8 @@ module.exports = {
       },
 
       {
-        test: /\.ttf?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.

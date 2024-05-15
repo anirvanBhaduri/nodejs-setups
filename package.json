@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start:server": "webpack --config ./webpack.backend.config.js  --watch",
+    "build:app": "webpack --config ./webpack.frontend.config.js",
     "start:app": "webpack serve --config ./webpack.frontend.config.js",
     "test:server": "jest --config ./backend/jest.config.js --testPathPattern=./backend",
     "test:app": "jest --config ./frontend/jest.config.js --testPathPattern=./frontend"
