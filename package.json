@@ -9,6 +9,7 @@
   "scripts": {
     "observable": "tsc --project ./tsconfig.json && node ./dist/observable.js",
     "promisify": "tsc --project ./tsconfig.json && node ./dist/promisify.js",
+    "fibonacci": "tsc --project ./tsconfig.json && node ./dist/fibonacci.js",
     "server": "tsc --project ./tsconfig.json && cp ./src/index.html ./dist/index.html && node ./dist/server.js"
   },
   "dependencies": {
