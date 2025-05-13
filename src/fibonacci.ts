@@ -28,17 +28,17 @@ function fibonacci2(n: number, memo: number[] = []): number {
   } else {
     result = fibonacci2(n - 1, memo) + fibonacci2(n - 2, memo);
   }
-  
+
   memo[n] = result;
   return result;
 }
 
 let start = new Date();
-console.log('expected: ', 10000, 'actual: ', fibonacci(257));
+console.log('expected: ', 10000, 'actual: ', fibonacci(7));
 let end = new Date();
 console.log('time taken = ', end.getTime() - start.getTime());
 
 start = new Date();
-console.log('expected: ', 10000, 'actual: ', fibonacci2(6126));
+console.log('expected: ', 10000, 'actual: ', fibonacci2(7));
 end = new Date();
 console.log('time taken = ', end.getTime() - start.getTime());
